@@ -40,6 +40,11 @@ async function run() {
         const result = await reviewsCollection.find().toArray()
       res.send(result)
     })
+    // get data from cart collection 
+    app.get('/carts', async (req,res)=>{
+      const result = await cartsCollection.find().toArray()
+       res.send(result)
+    })
   //  carts collection
   app.post('/carts', async (req, res)=>{
      const cartItem= req.body 
